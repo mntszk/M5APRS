@@ -1,0 +1,18 @@
+﻿No,Reference,Qty,Part,Value,Package,Model Number,Where to obtain,Description,Note
+1,R1 R2,2,Vishay CRCW0805 チップ抵抗 1/8W ±1%,47kΩ,0805 (2012),CRCW080547K0FKEA,Marutsu,RXバイアス分圧 (3V3/GND),
+2,R3,1,Susumu RR1220P 薄膜チップ抵抗 1/10W ±0.5%,2kΩ,0805 (2012),RR1220P-202-D,Marutsu,PTT電流制限 (MIC Tip→Q1コレクタ),
+3,R4,1,KOA RK73H チップ抵抗 1/4W ±1%,1.2kΩ,0805 (2012),RK73H2ATTD1201F,Marutsu,Q1ベース電流制限,
+4,R5,1,KOA RK73H チップ抵抗 1/4W ±1%,10kΩ,0805 (2012),RK73H2ATTD1002F,Marutsu,Q1ベース-GND (起動時の誤送信防止),
+5,C1 C3,2,村田 積層セラミック B ±10%,10µF 6.3V,0805 (2012),GRM21BB10J106KE01L,Marutsu,直流カット (C1:受信 / C3:送信),両端電圧は最大約1.6V
+6,C2,1,Walsin 積層セラミック X7R ±10%,0.01µF 50V,0805 (2012),0805B103K500CT,Marutsu,バイアス点パスコン,
+7,RV1,1,Bourns 3362P 半固定抵抗,5kΩ,THT (3362P),3362P-1-502LF,Akizuki,受信レベル調整 (SP→GPIO36),時計回りで大
+8,RV2,1,Bourns 3362P 半固定抵抗,1kΩ,THT (3362P),3362P-1-102LF,Akizuki,送信レベル調整 (GPIO26→MIC),時計回りで大
+9,D1,1,OptoSupply チップLED,Vf≦2.1V,0805 (2012),OSO50805C1C,Akizuki,PTT表示 兼 ベース直列,アノード側=G5
+10,Q1,1,東芝 NPNトランジスタ,2SC2712-GR,SOT-23,2SC2712-GR,Akizuki,PTTスイッチ,1=B 2=E 3=C
+11,J3,1,ピンヘッダー オス 1列40ピン,1x10 で使用,2.54mm,PH-1x40SG,Akizuki,M5Stack側面ヘッダー6〜15番へ挿す,10ピンに切って使用。J3-1=GND (側面15番)
+12,J1,1,—,—,ランド,—,—,SP接続 (1=Tip 2=Sleeve/GND),線材直付け。3.5mmステレオプラグへ
+13,J2,1,—,—,ランド,—,—,MIC接続 (1=Tip 2=Sleeve/GND),線材直付け。2.5mmステレオプラグへ
+14,—,1,1芯シールド線,40cm,—,KP01-06N-a,Akizuki,MIC用ケーブル,2.5mmミニプラグ用
+15,—,1,3.5mm ミニプラグつきコード,40cm,—,DCB-AKI09,Akizuki,SP用ケーブル,半分に切って使用
+16,—,1,2.5mm ミニプラグ,—,—,MP-321,Akizuki,MIC用プラグ,
+17,—,1,基板,—,22×26mm 2層 t1.6,M5APRS IF v1,JLCPCB,インターフェース基板,

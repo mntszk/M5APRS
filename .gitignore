@@ -1,0 +1,17 @@
+# 自分の設定 (コールサイン、固定位置など)。公開しない
+config.h
+
+# ビルド成果物・エディタ・OS
+build/
+*.o
+*.elf
+*.bin
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# テストの一時ファイル
+tests/.work/

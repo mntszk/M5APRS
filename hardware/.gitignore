@@ -1,0 +1,43 @@
+# KiCad: 個人設定 (表示状態など)
+*.kicad_prl
+
+# KiCad: 自動バックアップ・自動保存
+*-backups/
+*.bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.sch-bak
+_autosave-*
+\#auto_saved_files\#
+
+# KiCad: ロックファイル・キャッシュ
+~*.lck
+*.lck
+fp-info-cache
+
+# 製造データ: バラのガーバー/ドリルは除外 (zip だけ残す)
+*.gbr
+*.gbrjob
+*.drl
+*.gtl
+*.gbl
+*.gto
+*.gbo
+*.gts
+*.gbs
+*.gm1
+*-job.gbrjob
+*-drl_map.*
+*.pos
+
+# DRC/ERC レポート
+*.rpt
+
+# 外部サイトから取り込んだフットプリント (再配布条件が不明なため除外)
+# 形状は .kicad_pcb に埋め込まれているので基板は開ける
+UserAdded*.pretty/
+fp-lib-table
+
+# ほかいらないの
+production/
+.history/
