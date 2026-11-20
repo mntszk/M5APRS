@@ -61,8 +61,12 @@ The attenuator, receive input circuit and PTT circuit are on an external board. 
 ## Getting started
 Steps 1-3 are for building and uploading with the Arduino IDE. If you flashed the prebuilt binary, start from step 4 (see "[Quick start](#quick-start-flashing-the-prebuilt-binary)").
 
-1. Install the **ESP32 board package 2.x** in the Arduino IDE (expected version 2.1.4; 3.x is not supported) and the **M5Unified** library
-2. Put this repository in a folder named `M5APRS` (the Arduino IDE requires the sketch name and the folder name to match)
+1. Install the **M5Stack board package 2.x** (tested with 2.1.4) and the **M5Unified** library in the Arduino IDE
+   - In Tools > Board > Boards Manager, find "M5Stack", choose version **2.1.4** and install it
+   - **3.x is not supported** (the build stops with "board package 3.x is not supported"). If 3.x is installed, choose 2.1.4 in the same window to replace it
+2. Put the source in a **folder named `M5APRS`** (the Arduino IDE requires the sketch name and the folder name to match)
+   - A zip from Releases or "Code" > "Download ZIP" extracts to a folder such as `M5APRS-0.14.1` or `M5APRS-main`. **Rename the folder to `M5APRS`** before opening `M5APRS.ino`
+   - If you open it without renaming, the IDE asks whether to create an M5APRS folder and move the file. If you answer yes, only `M5APRS.ino` is moved and the build fails with errors such as `app_config.h: No such file or directory`
 3. Open `M5APRS.ino`, select a board such as "M5Stack-Core-ESP32" and upload (there are no files to edit)
 4. Insert a microSD card (formatted as FAT32, e.g. SDHC 32 GB or smaller) and start the unit. A sample `/aprs/config.txt` is created. Edit it on a computer, put the card back and restart
    ```

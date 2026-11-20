@@ -11,7 +11,7 @@
 
 #define FW_NAME          "M5APRS"
 #define FW_COPYRIGHT     "Copyright (c) 2026 Minato Suzuki"   // バージョン情報に出す (LICENSE と同じ)
-#define FW_VERSION       "0.14.0"
+#define FW_VERSION       "0.14.1"
 #define FW_BUILD_DATE    __DATE__      // 例: "Oct 18 2026"
 #define FW_BUILD_TIME    __TIME__      // 例: "12:34:56"
 

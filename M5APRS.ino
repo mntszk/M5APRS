@@ -10,6 +10,7 @@
 // 操作: 短押し A=前 / B=決定 / C=次 、長押し A=ビーコン送信 / B=戻る / C=設定メニュー
 // 送信: A長押しで1パケット。設定メニューの「ビーコン自動送信」で一定間隔の自動送信もできる。PTTはソフトが自動で入れる。
 
+#include "board_check.h"     // ボードパッケージ 3.x ならここで止める
 #include <M5Unified.h>
 #include <string.h>
 #include <stdio.h>

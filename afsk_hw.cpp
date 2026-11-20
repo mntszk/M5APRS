@@ -1,6 +1,7 @@
 // afsk_hw.cpp
 #include "afsk_hw.h"
 
+#include "board_check.h"     // ボードパッケージ 3.x ならここで止める (タイマーの使い方が違う)
 #include <Arduino.h>
 #include <driver/adc.h>
 #include <driver/dac.h>

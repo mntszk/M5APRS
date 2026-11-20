@@ -3,6 +3,12 @@
 各版の主な変更です。日付は版を上げた日です。
 Main changes in each version. Dates are when the version was bumped.
 
+## 0.14.1 (2026-11-21)
+- ボードパッケージ 3.x でビルドしたとき、「3.x は未対応、2.x (2.1.4) を使う」と分かりやすいメッセージを出して止める
+- README: ボードパッケージの版の選び方と、zip を展開したときのフォルダ名の変え方を追記
+- Building with board package 3.x now stops with a clear message to use 2.x (2.1.4)
+- README: how to choose the board package version, and how to rename the folder after extracting a zip
+
 ## 0.14.0 (2026-11-17)
 - 宛先 (TOCALL) を aprs-deviceid で割り当てられた `APM5AP` に変更
 - Mic-E 以外のパケットも、宛先から機種名を表示 (aprs-deviceid の表、約480件)
