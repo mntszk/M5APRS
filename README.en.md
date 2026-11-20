@@ -6,6 +6,21 @@ English | [日本語](README.md)
 
 M5APRS is amateur radio firmware for the M5Stack Basic V2.6. It turns the GPS position into APRS packets and sends them to a transceiver as 1200 bps AFSK, and it decodes the APRS packets received by the transceiver and shows them on the screen. It is a personal hobby project and is not affiliated with M5Stack.
 
+## Quick start: flashing the prebuilt binary
+You can flash the firmware from a web browser, without the Arduino IDE.
+
+1. Download `M5APRS-x.y.z.bin` of the latest version from [Releases](https://github.com/mntszk/M5APRS/releases) (`x.y.z` is the version number)
+2. Connect the M5Stack Basic to your computer with a USB cable
+3. Open Espressif's [ESP Tool (esptool-js)](https://espressif.github.io/esptool-js/) in Chrome or Edge
+4. In the "Program" section, set Baudrate to `921600`, press "Connect" and choose the port of the M5Stack
+5. Set "Flash Address" to **`0x0`**, choose the file from step 1 and press "Program"
+6. When it is done, press the reset (power) button of the M5Stack to start it
+7. Then continue with step 4 (config.txt on the microSD card) of "[Getting started](#getting-started)" below
+
+- If the port does not appear, install the driver for the USB serial chip (CH9102 on the M5Stack Basic V2.6)
+- Do not press "Erase Flash". It also erases the settings saved in the unit (symbol, SSID, volume, etc.). Without it, the settings are kept when you update
+- From the command line: `esptool.py --chip esp32 --port <port> --baud 921600 write_flash 0x0 M5APRS-x.y.z.bin`
+
 ## Features
 - Builds APRS position reports (uncompressed format) from GPS (NMEA) and transmits them (long press A for one packet, or automatic beaconing)
 - Automatic beaconing: off / ack only / every 1-60 minutes / Flexible (selected in the settings menu and kept across power cycles). Waits while another station is transmitting
@@ -44,6 +59,8 @@ The attenuator, receive input circuit and PTT circuit are on an external board. 
 > Caution: The DAC output is about 2.6 Vpp. Always attenuate it before feeding it to the transceiver's microphone input. Do not connect a GPIO directly to the PTT line.
 
 ## Getting started
+Steps 1-3 are for building and uploading with the Arduino IDE. If you flashed the prebuilt binary, start from step 4 (see "[Quick start](#quick-start-flashing-the-prebuilt-binary)").
+
 1. Install the **ESP32 board package 2.x** in the Arduino IDE (expected version 2.1.4; 3.x is not supported) and the **M5Unified** library
 2. Put this repository in a folder named `M5APRS` (the Arduino IDE requires the sketch name and the folder name to match)
 3. Open `M5APRS.ino`, select a board such as "M5Stack-Core-ESP32" and upload (there are no files to edit)

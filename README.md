@@ -6,6 +6,21 @@ M5Stack Basic GPS APRS tracker/receiver (1200bps AFSK)
 
 M5Stack Basic V2.6 で、GPS の位置を APRS パケットにして 1200bps AFSK で無線機へ送り、無線機で受信した APRS をデコードして画面に表示するアマチュア無線用のソフトです。個人の趣味のプロジェクトで、M5Stack 社とは関係ありません。
 
+## かんたん書き込み (ビルド済みファイル)
+Arduino IDE がなくても、ブラウザだけで書き込めます。
+
+1. [Releases](https://github.com/mntszk/M5APRS/releases) から、最新の版の `M5APRS-x.y.z.bin` をダウンロードする (`x.y.z` は版の番号)
+2. M5Stack Basic を USB ケーブルでパソコンにつなぐ
+3. Chrome か Edge で、Espressif の書き込みツール [ESP Tool (esptool-js)](https://espressif.github.io/esptool-js/) を開く
+4. 「Program」の欄で Baudrate を `921600` にして「Connect」を押し、出てきた一覧から M5Stack のポートを選ぶ
+5. 「Flash Address」を **`0x0`** にして、1 のファイルを選び、「Program」を押す
+6. 書き込みが終わったら、M5Stack のリセット (電源) ボタンを押して起動する
+7. 続いて、下の「[使い方](#使い方)」の 4 (microSD の config.txt) に進む
+
+- ポートが一覧に出ないときは、USB 変換チップのドライバー (M5Stack Basic V2.6 は CH9102) を入れてください
+- 「Erase Flash」は押さないでください。押すと、本体に保存した設定 (シンボル、SSID、音量など) も消えます。押さなければ、版を上げても設定は残ります
+- コマンドで書き込む場合: `esptool.py --chip esp32 --port <ポート> --baud 921600 write_flash 0x0 M5APRS-x.y.z.bin`
+
 ## 主な機能
 - GPS (NMEA) の位置から、APRS の位置レポート (非圧縮形式) を作って送信 (A長押しで1パケット、または自動送信)
 - ビーコンの自動送信: オフ / Ackのみ / 1〜60分ごと / フレックス (設定メニューで選択。電源を切っても保持)。他局の送信中は止むまで待つ
@@ -44,6 +59,8 @@ M5Stack Basic V2.6 で、GPS の位置を APRS パケットにして 1200bps AFS
 > 注意: DAC の出力は約 2.6Vpp あるため、無線機のマイク入力へは必ず減衰させてください。PTT 線に GPIO を直結しないでください。
 
 ## 使い方
+1〜3 は Arduino IDE でビルドして書き込む場合です。ビルド済みのファイルを書き込んだ場合は 4 から始めてください (「[かんたん書き込み](#かんたん書き込み-ビルド済みファイル)」)。
+
 1. Arduino IDE に **ESP32 ボードパッケージ 2.x** (動作確認の想定は 2.1.4。3.x は未対応) と、ライブラリ **M5Unified** を入れる
 2. このリポジトリを `M5APRS` という名前のフォルダに置く (Arduino IDE はスケッチ名とフォルダ名が同じである必要がある)
 3. `M5APRS.ino` を開き、ボード「M5Stack-Core-ESP32」などを選んで書き込む (書き換えるファイルはありません)
